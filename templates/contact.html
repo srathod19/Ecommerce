@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block title %} contact{% endblock title %}
+
+{% block body %} 
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  {% comment %} <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol> {% endcomment %}
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1200x400/?books,laptop" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+
+      </div>
+    </div>
+   </div>
+  </div> 
+ 
+<div class="container  mb-0">
+<h1 class="text-center">Contact us</h1>
+<form method="POST" action="/contact">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Enter your Name">
+  </div>
+
+ <div class="form-group">
+    <label for="email">email</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="E-mail">
+  </div>
+  <div class="form-group">
+    <label for="phone">phone</label>
+    <input type="phone" class="form-control" id="exampleFormControlInput1" name="phone" placeholder="Enter your phone numbers">
+  </div>
+ <div class="form-group">
+    <label for="desc">description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>
+  </div>
+<button class="btn btn-primary" type="submt">submit</button>
+</form>
+</div>
+
+
+{% endblock body %}
